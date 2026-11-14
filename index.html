@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevVibe | GitHub Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2 class="logo">✦ DevVibe</h2>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav active" href="#overview">◈ Overview</a>
+      <a class="nav" href="#repositories">⌘ Repositories</a>
+      <a class="nav" href="#activity">▦ Activity</a>
+      <a class="nav" href="#vibe">✧ Vibe Check</a>
+      <a class="nav" href="#assistant">◉ AI Assistant</a>
+      <div class="side-bottom">Developer insights, reimagined.</div>
+    </aside>
+
+    <main class="main" id="overview">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DEVELOPER INTELLIGENCE</p>
+          <h1>Your GitHub, <span>decoded.</span></h1>
+        </div>
+        <form id="searchForm" class="search">
+          <input id="username" placeholder="Enter GitHub username..." value="octocat" required>
+          <button type="submit">Analyse ↗</button>
+        </form>
+      </header>
+
+      <div id="message" class="message">Enter a GitHub username to explore their developer profile.</div>
+
+      <section class="profile panel">
+        <div class="profile-left">
+          <img id="avatar" src="https://github.com/octocat.png" alt="GitHub avatar">
+          <div>
+            <h2 id="name">Loading profile...</h2>
+            <p id="handle">@octocat</p>
+            <p id="bio">Discovering developer profile...</p>
+            <a id="githubLink" href="https://github.com/octocat" target="_blank">View GitHub profile ↗</a>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div><strong id="followers">—</strong><small>Followers</small></div>
+          <div><strong id="following">—</strong><small>Following</small></div>
+          <div><strong id="reposCount">—</strong><small>Repositories</small></div>
+          <div><strong id="totalStars">—</strong><small>Total stars</small></div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat panel"><span>PUBLIC REPOSITORIES</span><strong id="statRepos">—</strong><small>Projects on GitHub</small></div>
+        <div class="stat panel"><span>STARS EARNED</span><strong id="statStars">—</strong><small>Across repositories</small></div>
+        <div class="stat panel"><span>TOP LANGUAGE</span><strong id="topLanguage">—</strong><small>Most used language</small></div>
+        <div class="stat panel"><span>PUBLIC ACTIVITY</span><strong id="eventCount">—</strong><small>Recent public events</small></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel section" id="activity">
+          <div class="section-head">
+            <div><p class="eyebrow">CONSISTENCY TRACKER</p><h2>Recent activity</h2></div>
+            <span class="pill">Public events · 30 days</span>
+          </div>
+          <div id="heatmap" class="heatmap"></div>
+          <div class="legend">Less <i class="level0"></i><i class="level1"></i><i class="level2"></i><i class="level3"></i> More</div>
+        </div>
+        <div class="panel section">
+          <p class="eyebrow">TECHNICAL DNA</p>
+          <h2>Language distribution</h2>
+          <canvas id="languageChart"></canvas>
+          <div id="languageLegend" class="language-legend"></div>
+        </div>
+      </section>
+
+      <section class="panel section" id="repositories">
+        <div class="section-head">
+          <div><p class="eyebrow">BUILDING IN PUBLIC</p><h2>Featured repositories</h2></div>
+          <select id="sortRepos">
+            <option value="stars">Most starred</option>
+            <option value="updated">Recently updated</option>
+          </select>
+        </div>
+        <div id="repoGrid" class="repo-grid">
+          <p>Loading repositories...</p>
+        </div>
+      </section>
+
+      <section class="panel section" id="vibe">
+        <p class="eyebrow">CAREER INTELLIGENCE</p>
+        <h2>Vibe Check</h2>
+        <p class="muted">See how your GitHub portfolio aligns with a job description.</p>
+        <textarea id="jobDescription" placeholder="Paste a job description here... Example: Looking for a developer skilled in Python, JavaScript, React, SQL and Node.js."></textarea>
+        <button id="checkVibe">Analyse compatibility ↗</button>
+        <div id="vibeResult" class="result"></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel section" id="assistant">
+          <p class="eyebrow">YOUR PORTFOLIO COPILOT</p>
+          <h2>Ask your GitHub</h2>
+          <div id="chatMessages" class="chat-messages">
+            <div class="bot-msg">Hi! Ask me about this developer's repositories, languages or most popular project.</div>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" placeholder="Ask something about this profile..." required>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+        <div class="panel section">
+          <p class="eyebrow">GROWTH INSIGHTS</p>
+          <h2>Career advisor</h2>
+          <p class="muted">Suggestions based on your GitHub portfolio.</p>
+          <button id="careerButton">Generate recommendations</button>
+          <div id="careerResult" class="career-result"></div>
+        </div>
+      </section>
+
+      <footer>DevVibe © 2026 · Built for developers, by developers.</footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
